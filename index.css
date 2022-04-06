@@ -1,0 +1,40 @@
+body{
+    color: white;
+    margin: 0%;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    font-size: 16px;
+    background-color: rgb(75, 75, 75);
+}
+
+ul {
+    list-style-type: none;
+    padding-top: 2em;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    position: fixed;
+}
+
+li.nav {
+    display: inline;
+    padding-left: 2em;
+    padding-right: 2em;
+    justify-content: center;
+}
+
+li.nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 2em;
+    display: inline-block;
+    padding: 1em;
+}
+
+li.nav a:hover{
+    text-decoration: underline 1px white;
+    background-color: rgb(164, 164, 164);;
+}
