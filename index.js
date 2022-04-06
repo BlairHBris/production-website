@@ -13,3 +13,20 @@ usernameField.addEventListener('submit', name => {
     window.localStorage.setItem('username', enteredUsername.value)
     enteredUsername.value=""
 })
+
+const startingPlaceField = document.querySelector(".startingPlace")
+let requestedStartingPlace = document.querySelector("#requestedStartingPlace")
+
+startingPlaceField.addEventListener('submit', destination => {
+    destination.preventDefault()
+    let requestIndex = document.querySelector("#requestedStartingPlace").selectedIndex
+    let request = (requestedStartingPlace[requestIndex].text)
+    if (request == "Anime"){
+        window.location.href = "anime.html"
+    }if (request == "TCG of the Anime"){
+        window.location.href = "atcg.html"
+    }if (request == "TCG of Today"){
+        window.location.href = "tcg.html"
+    }
+
+})

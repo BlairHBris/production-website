@@ -17,8 +17,8 @@
     <ul>
         <li class="nav"><a href="index.html">Homepage</a></li>
         <li class="nav"><a href="anime.html">Anime</a></li>
-        <li class="nav"><a href="goat.html">TCG of the Anime</a></li>
-        <li class="nav"><a href="today.html">TCG of Today</a></li>
+        <li class="nav"><a href="atcg.html">TCG of the Anime</a></li>
+        <li class="nav"><a href="tcg.html">TCG of Today</a></li>
     </ul>
     <img class="banner" src="images/ygologo-removebg-preview.png" alt="Yu-Gi-Oh! Logo">
 
@@ -50,12 +50,12 @@
         </form>
         <form class="startingPlace">
             <label for="startingPlace">Select where you would like to begin.</label>
-            <select name="startingPlace">
+            <select name="startingPlace" id="requestedStartingPlace">
                 <option value="anime">Anime</option>
-                <option value="ATCG">TCG of the Anime</option>
-                <option value="TCG">TCG of Today</option>
+                <option value="atcg">TCG of the Anime</option>
+                <option value="tcg">TCG of Today</option>
             </select>
-            <input class="submit" type="submit" value="Submit">
+            <input class="submit" type="submit" value="Go">
         </form>
     </main>
 
