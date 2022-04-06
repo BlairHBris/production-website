@@ -38,3 +38,10 @@ li.nav a:hover{
     text-decoration: underline 1px white;
     background-color: rgb(164, 164, 164);;
 }
+
+.banner{
+    margin-top: 6em;
+    width: 90%;
+    height: 15em;
+    align-items: center;
+}
