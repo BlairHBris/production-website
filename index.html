@@ -44,8 +44,8 @@
         <br>
         <br>
         <form class="username">
-            <label for="username">Please enter your desired Username for the journey!</label>
-            <input type="text" name="username" id="enteredUsername" placeholder="SetoKaiba" required>
+            <label for="username">Please enter your desired Username for the journey! (Letters and Numbers Only, Max 10 Characters)</label>
+            <input type="text" name="username" id="enteredUsername" placeholder="SetoKaiba" pattern="[a-zA-Z0-9]*" maxlength="10">
             <input class = "submit" type="submit" value="Submit">
         </form>
         <form class="startingPlace">
