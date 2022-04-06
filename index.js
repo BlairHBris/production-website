@@ -1,12 +1,15 @@
 const toTopButton = document.querySelector("#backToTop")
-const startingSubmissionButton = document.querySelector("#startingSubmission")
 
 function backToTop() {
     document.documentElement.scrollTop = 0;
 }
-
 document.querySelector("#backToTop").onclick = backToTop
 
-function travel(){
-    
-}
+const usernameField = document.querySelector(".username")
+let enteredUsername = document.querySelector("#enteredUsername")
+
+usernameField.addEventListener('submit', name => {
+    name.preventDefault()
+    window.localStorage.setItem('username', enteredUsername.value)
+    enteredUsername.value=""
+})
