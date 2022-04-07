@@ -19,7 +19,6 @@
         <li class="nav"><a href="basics.html">The Basics</a></li>
         <li class="nav"><a href="anime.html">Anime</a></li>
         <li class="nav"><a href="atcg.html">TCG of the Anime</a></li>
-        <li class="nav"><a href="tcg.html">TCG of Today</a></li>
     </ul>
 
     <main>
@@ -30,16 +29,16 @@
         </p>
         <h2>The Field and The Cards</h2>
         <p>
-            <a href="images/ygofield.png">
-                <img class="ygofield" src="images/ygofield.png" alt="The Field">
+            <a href="images/ygofield.jpg">
+                <img class="ygofield" src="images/ygofield.jpg" alt="The Field">
             </a>
             <br>
             Let's start with where we play the game, the Field, and what we play it with, the Cards. As you can see in the labled image above, there are many zones on the field for cards to go but
             not all cards can go in all zones. Use the selector below to learn about any zone and the cards that can occupy them that you want!
         </p>
-        <form>
+        <form class = firstLearning>
             <label for="zoneSelector">Zone Selection</label>
-            <select name="zoneSelector" id="">
+            <select name="zoneSelector" id="requestedLearning">
                 <option value="deck">Deck</option>
                 <option value="mmz">Main Monster Zone</option>
                 <option value="stz">Spell & Trap Zone</option>
@@ -47,23 +46,24 @@
                 <option value="gy">Graveyard</option>
                 <option value="banished">Banished Zone</option>
                 <option value="ed">Extra Deck</option>
-                <option value="emz">Extra Monster Zone</option>
-                <option value="Pendulum">Pendulum Scales</option>
             </select>
             <input type="submit" type="submit">
         </form>
         <br>
+        <p class="learning"></p>
+    </main>
+
+    <p>
         <form class="startingPlace">
             <label for="startingPlace">Select where you would like to go.</label>
             <select name="startingPlace" id="requestedStartingPlace">
                 <option value="basics">The Basics</option>
                 <option value="anime">Anime</option>
                 <option value="atcg">TCG of the Anime</option>
-                <option value="tcg">TCG of Today</option>
             </select>
             <input class="submit" type="submit" value="Go">
         </form>
-    </main>
+    </p>
 
     <footer>
         <button id="backToTop">Back to Top</button>

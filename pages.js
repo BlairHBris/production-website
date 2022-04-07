@@ -36,7 +36,7 @@ const main = document.querySelector("main")
 let username = window.localStorage.getItem("username")
 console.log(username)
 
-function addBasicsGreeting() {
+function addGreeting() {
     const greeting = document.createElement("p")
     greeting.innerHTML = `
         <h1>Welcome ${username}!</>
@@ -44,4 +44,54 @@ function addBasicsGreeting() {
     main.prepend(greeting)
 }
 
-addBasicsGreeting()
+addGreeting()
+
+const firstLearning = document.querySelector(".firstLearning")
+let requestedLearning = document.querySelector("#requestedLearning")
+let learning = document.querySelector(".learning")
+
+function getCardImage(card) {
+    
+}
+
+firstLearning.addEventListener('submit', destination => {
+    destination.preventDefault()
+    let learningIndex = document.querySelector("#requestedLearning").selectedIndex
+    if (learningIndex == [0]) {
+        learning.innerHTML = `
+        <p>
+        The deck is where the majority of your cards will reside and consists of your Spell, Trap, and Main Deck Monster cards. At the start of the game, each player draws 5 cards and the turn player 
+        draws a 6th card to start their turn. From there, depending on what type of cards are in their hand, the turn player can either Summon a Monster, set a card, or just end their turn.
+        </p>
+        <h3> Spell Cards </h3>
+        <p>
+        The Spell Card category consists of 3 main types, Field Spells, Normal Spells, and Quick Play Spells. Field Spells and Normal Spells can only be activated by a player during their turn 
+        whereas a Quickplay spell can be set in the Spell & Trap Zone and then activated on your opponents turn.
+        </p>
+        `
+    } if (learningIndex == [1]) {
+        learning.innerHTML = `
+        Information about the Main Monster Zone
+        `
+    } if (learningIndex == [2]) {
+        learning.innerHTML = `
+        Information about the Spell & Trap Zone
+        `
+    } if (learningIndex == [3]) {
+        learning.innerHTML = `
+        Information about the Field Zone
+        `
+    } if (learningIndex == [4]) {
+        learning.innerHTML = `
+        Information about the Graveyard
+        `
+    } if (learningIndex == [5]) {
+        learning.innerHTML = `
+        Information about the Banished Zone
+        `
+    } if (learningIndex == [6]) {
+        learning.innerHTML = `
+        Information about the Extra Deck
+        `
+    } 
+})
