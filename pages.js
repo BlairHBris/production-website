@@ -25,14 +25,28 @@ startingPlaceField.addEventListener('submit', destination => {
 
 const api = `https://db.ygoprodeck.com/api/v7/cardinfo.php`
 
-function getCard(cardID) {
+function getCardName(cardID) {
     return fetch(api)
         .then(response => {
             return response.json()
         }).then(parsedResponse => {
-            return (parsedResponse.data.find(response => response.id == cardID))
+            let card = (parsedResponse.data.find(response => response.id == cardID))
+            console.log(card.name)
         })
 }
+
+function getCardPicture(cardID) {
+    return fetch(api)
+        .then(response => {
+            return response.json()
+        }).then(parsedResponse => {
+            let card = (parsedResponse.data.find(response => response.id == cardID))
+            console.log(card.card_images[0].image_url_small)
+        })
+}
+
+getCardName(55144522)
+getCardPicture(55144522)
 
 const deckAndCardsIDS = [
     55144522,
