@@ -32,14 +32,6 @@ startingPlaceField.addEventListener('submit', destination => {
     }
 })
 
-const api = `https://db.ygoprodeck.com/api/v7/cardinfo.php`
-
-fetch(api)
-    .then(response => {
-        return response.json()
-    }).then(parsedResponse => {
-        console.log(parsedResponse)
-    })
 
 const basicsMain = document.querySelector(".basicsMain")
 let username = window.localStorage.getItem("username")
