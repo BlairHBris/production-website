@@ -36,16 +36,16 @@
             Let's start with where we play the game, the Field, and what we play it with, the Cards. As you can see in the labled image above, there are many zones on the field for cards to go but
             not all cards can go in all zones. Use the selector below to learn about any zone and the cards that can occupy them that you want!
         </p>
-        <form class = firstLearning>
+        <form class = firstLearning id="learning">
             <label for="zoneSelector">Zone Selection</label>
             <select name="zoneSelector" id="requestedLearning">
-                <option value="deck">Deck</option>
-                <option value="mmz">Main Monster Zone</option>
+                <option value="deck">The Deck and The Cards</option>
+                <option value="mmz">Monster Card Zone</option>
                 <option value="stz">Spell & Trap Zone</option>
                 <option value="fz">Field Zone</option>
                 <option value="gy">Graveyard</option>
                 <option value="banished">Banished Zone</option>
-                <option value="ed">Extra Deck</option>
+                <option value="fusion">Fusion Deck</option>
             </select>
             <input type="submit" type="submit">
         </form>
@@ -66,6 +66,7 @@
     </p>
 
     <footer>
+        <button id="backToZone"><a href="#learning">Back to Zone</a></button>
         <button id="backToTop">Back to Top</button>
     </footer>
     

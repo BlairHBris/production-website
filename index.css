@@ -64,6 +64,25 @@ h2{
     margin: 1em;
 }
 
+h3{
+    color:rgb(211, 170, 65);
+    font-size: 1.75em;
+    margin: 1em;
+}
+
+h4{
+    color:rgb(211, 170, 65);
+    font-size: 1.5em;
+    margin: 1em;
+}
+
+h5{
+    color:rgb(211, 170, 65);
+    font-size: 1.25em;
+    margin: .5em;
+}
+
+
 p, form{
     font-size: 1.4em;
     line-height: 2em;
@@ -93,6 +112,16 @@ button{
     font-size: 1.5em;
 }
 
+#backToZone{
+    margin-bottom: 1.5em;
+    font-size: 1.5em;
+}
+
+#backToZone a{
+    text-decoration: none;
+    color: black;
+}
+
 button:hover,
 .submit:hover{
     background-color: rgb(211, 170, 65);
@@ -100,5 +129,16 @@ button:hover,
 }
 
 .ygofield{
-    width: 40em;
+    width: 100%;
+}
+
+.greeting{
+    line-height: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+.learning{
+    font-size: 16px;
 }
