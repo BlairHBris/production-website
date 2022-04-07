@@ -5,15 +5,6 @@ function backToTop() {
 }
 document.querySelector("#backToTop").onclick = backToTop
 
-const usernameField = document.querySelector(".username")
-let enteredUsername = document.querySelector("#enteredUsername")
-
-usernameField.addEventListener('submit', name => {
-    name.preventDefault()
-    window.localStorage.setItem('username', enteredUsername.value)
-    enteredUsername.value = ""
-})
-
 const startingPlaceField = document.querySelector(".startingPlace")
 let requestedStartingPlace = document.querySelector("#requestedStartingPlace")
 
@@ -41,17 +32,16 @@ fetch(api)
         console.log(parsedResponse)
     })
 
-const basicsMain = document.querySelector(".basicsMain")
+const main = document.querySelector("main")
 let username = window.localStorage.getItem("username")
 console.log(username)
 
-function addGreeting(username) {
-    const p = document.createElement("p")
-    p.innerHTML = `
-        Welcome to The Basics ${username}!
+function addBasicsGreeting() {
+    const greeting = document.createElement("p")
+    greeting.innerHTML = `
+        <h1>Welcome ${username}!</>
     `
-    basicsMain.append(p)
+    main.prepend(greeting)
 }
 
-
-
+addBasicsGreeting()
