@@ -78,7 +78,8 @@ firstLearning.addEventListener('submit', destination => {
     destination.preventDefault()
     let learningIndex = document.querySelector("#requestedLearning").selectedIndex
     if (learningIndex == [0]) { 
-        getCard(deckAndCardsIDS)
+        getCardName(deckAndCardsIDS)
+        getCardPicture(deckAndCardsIDS)
             .then(card => {
                 learning.innerHTML = `
                 <h2> The Deck and The Cards </h2>
@@ -90,7 +91,6 @@ firstLearning.addEventListener('submit', destination => {
                 </p>
         
                 <h3> Spell Cards </h3>
-                <img src="${getCard(55144522).card_images.images_url_small}" alt="${getCard(55144522).name}"/>
                 <p>
                 The Spell Card category consists of 4 main types, Field Spells, Normal Spells, Continuous Spells, and Quick Play Spells. Field, Normal, and Continuous spells can only be activated by a player 
                 during their turn whereas a Quickplay spell can be set in the Spell & Trap Zone and then activated on your opponents turn.
