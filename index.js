@@ -27,6 +27,8 @@ startingPlaceField.addEventListener('submit', destination => {
         window.location.href = "atcg.html"
     }if (request == "TCG of Today"){
         window.location.href = "tcg.html"
+    }if (request == "The Basics"){
+        window.location.href = "tcg.html"
     }
 
 })
