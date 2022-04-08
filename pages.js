@@ -41,26 +41,6 @@ addGreeting()
 const api = `https://db.ygoprodeck.com/api/v7/cardinfo.php`
 
 
-/*function getCardName(cardID) {
-    return fetch(api)
-        .then(response => {
-            return response.json()
-        }).then(parsedResponse => {
-            let card = (parsedResponse.data.find(response => response.id == cardID))
-            console.log(card.name)
-        })
-}
-
-function getCardPicture(cardID) {
-    return fetch(api)
-        .then(response => {
-            return response.json()
-        }).then(parsedResponse => {
-            let card = (parsedResponse.data.find(response => response.id == cardID))
-            console.log(card.card_images[0].image_url_small)
-        })
-} */
-
 const cardIds = [
     55144522,
     4206964,
