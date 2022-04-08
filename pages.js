@@ -13,18 +13,20 @@ startingPlaceField.addEventListener('submit', destination => {
     let requestIndex = document.querySelector("#requestedStartingPlace").selectedIndex
     let request = (requestedStartingPlace[requestIndex].text)
     if (request == "Anime") {
-        window.location.href = "anime.html"
+        location.href = "anime.html"
     } if (request == "TCG of the Anime") {
-        window.location.href = "atcg.html"
+        location.href = "atcg.html"
     } if (request == "TCG of Today") {
-        window.location.href = "tcg.html"
+        location.href = "tcg.html"
     } if (request == "The Basics") {
-        window.location.href = "basics.html"
+        location.href = "basics.html"
+    } if (request == "Homepage") {
+        location.href = "index.html"
     }
 })
 
 const main = document.querySelector("main")
-let username = window.localStorage.getItem("username")
+let username = localStorage.getItem("username")
 
 function addGreeting() {
     const greeting = document.createElement("p")
@@ -38,18 +40,55 @@ addGreeting()
 
 const api = `https://db.ygoprodeck.com/api/v7/cardinfo.php`
 
-async function getApi(url) {
-    const response = await fetch(url)
-    let data = await response.json()
-    return data
-}then((data) => {
-    Promise.all(data)
-})
 
-function getCardImage(cardID){
-    Promise.all(getApi(api))
-
+/*function getCardName(cardID) {
+    return fetch(api)
+        .then(response => {
+            return response.json()
+        }).then(parsedResponse => {
+            let card = (parsedResponse.data.find(response => response.id == cardID))
+            console.log(card.name)
+        })
 }
+
+function getCardPicture(cardID) {
+    return fetch(api)
+        .then(response => {
+            return response.json()
+        }).then(parsedResponse => {
+            let card = (parsedResponse.data.find(response => response.id == cardID))
+            console.log(card.card_images[0].image_url_small)
+        })
+} */
+
+const cardIds = [
+    55144522,
+    4206964,
+    69140098,
+    89631139,
+    74677422,
+]
+
+const requests = cardIds.map(id => {
+    return fetch(`https://db.ygoprodeck.com/api/v7/cardinfo.php?id=${id}`
+    ).then((response) => response.json())
+})
+Promise.all(requests)
+    .then(responses => {
+        responses.forEach(response => {
+            const card = response.data[0]
+        })
+    })
+
+const cardList = localStorage.getItem("cards")
+console.log(cardList)
+
+function getCardImage(cardId) {
+    cardList.filter(cardId)
+    return card.card_images[0].image_url_small
+}
+
+getCardImage(74677422)
 
 const firstLearning = document.querySelector(".firstLearning")
 let requestedLearning = document.querySelector("#requestedLearning")
@@ -60,7 +99,6 @@ firstLearning.addEventListener('submit', destination => {
     let learningIndex = document.querySelector("#requestedLearning").selectedIndex
             if (learningIndex == [0]) { 
                 learning.innerHTML = `
-                ${getCardImage(55144522)}
                 <h2> The Deck and The Cards </h2>
                 <p>
                 The deck is where the majority of your cards will reside and consists of your Spell, Trap, and Main Deck Monster cards. At the start of the game, each player draws 5 cards and the turn player 

@@ -10,7 +10,7 @@ let enteredUsername = document.querySelector("#enteredUsername")
 
 usernameField.addEventListener('submit', name => {
     name.preventDefault()
-    window.localStorage.setItem('username', enteredUsername.value)
+    localStorage.setItem('username', enteredUsername.value)
     enteredUsername.value = ""
 })
 
@@ -22,25 +22,26 @@ startingPlaceField.addEventListener('submit', destination => {
     let requestIndex = document.querySelector("#requestedStartingPlace").selectedIndex
     let request = (requestedStartingPlace[requestIndex].text)
     if (request == "Anime") {
-        window.location.href = "anime.html"
+        location.href = "anime.html"
     } if (request == "TCG of the Anime") {
-        window.location.href = "atcg.html"
+        location.href = "atcg.html"
     } if (request == "TCG of Today") {
-        window.location.href = "tcg.html"
+        location.href = "tcg.html"
     } if (request == "The Basics") {
-        window.location.href = "basics.html"
+        location.href = "basics.html"
+    } if (request == "Homepage") {
+        location.href = "index.html"
     }
 })
 
 
 const basicsMain = document.querySelector(".basicsMain")
-let username = window.localStorage.getItem("username")
-console.log(username)
+let username = localStorage.getItem("username")
 
 function addGreeting(username) {
     const p = document.createElement("p")
     p.innerHTML = `
-        Welcome to The Basics ${username}!
+        Welcome to ${username}!
     `
     basicsMain.append(p)
 }
