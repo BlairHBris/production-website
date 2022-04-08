@@ -51,7 +51,7 @@ const cardIds = [
     40619825,
     15259703,
     81439173,
-    88240808,
+    30241314,
     23995346,
     24094653
 ]
@@ -183,7 +183,7 @@ firstLearning.addEventListener('submit', destination => {
             } if (learningIndex == [5]) {
                 learning.innerHTML = `
                 <h2> The Banished Zone </h2>
-                <img src="${cardImageGet("Kycoo the Ghost Destroyer")} alt = "Kycoo"/>
+                <img src="${cardImageGet("Macro Cosmos")} alt = "Macro Cosmos"/>
                 <p>
                     The Banished Zone is only utilized if a card specifically says it Banishes or Removes from play. The most popular way this is accomplished is with the card Macro Cosmos. This card says that 
                     while it is on the field, any card sent to the Graveyard is Banished instead. Alternatively, Bottomless Trap Hole will destroy a summoned monster, send it to the Graveyard, and then Banish it.
@@ -203,5 +203,7 @@ firstLearning.addEventListener('submit', destination => {
                     Fusion Summoning requires the Spell card Polymerization and the required Monsters listed on the Fusion Monster Card. These monsters are typically not 
                     worth summoning as you need to use 3 cards, 2 monsters minimum and the Polymerization, to summon 1 monster.
                 `
+            } if (learningIndex == [7]) {
+                learning.innerHTML = ``
             }
         })
