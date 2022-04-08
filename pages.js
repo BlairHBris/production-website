@@ -38,11 +38,18 @@ addGreeting()
 
 const api = `https://db.ygoprodeck.com/api/v7/cardinfo.php`
 
-fetch(api)
-        .then((response) => response.json())
-        .then((response) => {
-            console.log(response)
-        })
+async function getApi(url) {
+    const response = await fetch(url)
+    let data = await response.json()
+    return data
+}then((data) => {
+    Promise.all(data)
+})
+
+function getCardImage(cardID){
+    Promise.all(getApi(api))
+
+}
 
 const firstLearning = document.querySelector(".firstLearning")
 let requestedLearning = document.querySelector("#requestedLearning")
@@ -51,15 +58,9 @@ let learning = document.querySelector(".learning")
 firstLearning.addEventListener('submit', destination => {
     destination.preventDefault()
     let learningIndex = document.querySelector("#requestedLearning").selectedIndex
-    /*fetch(api)
-        .then((response) => response.json())
-        .then((response) => {
-            const cards = response.data.map((card) => card.name)
-            
-            return Promise.all(requests)
-        }) */
             if (learningIndex == [0]) { 
                 learning.innerHTML = `
+                ${getCardImage(55144522)}
                 <h2> The Deck and The Cards </h2>
                 <p>
                 The deck is where the majority of your cards will reside and consists of your Spell, Trap, and Main Deck Monster cards. At the start of the game, each player draws 5 cards and the turn player 
