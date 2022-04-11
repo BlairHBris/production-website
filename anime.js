@@ -41,19 +41,14 @@ addGreeting()
 const api = `https://db.ygoprodeck.com/api/v7/cardinfo.php`
 
 const cardIds = [
-    55144522,
-    4206964,
-    69140098,
     89631139,
-    74677422,
-    83764719,
-    46986414,
-    40619825,
+    13039848,
+    10045474,
     15259703,
-    81439173,
-    30241314,
-    23995346,
-    24094653
+    67284908,
+    10000010,
+    4206964,
+    36607978
 ]
 
 const requests = cardIds.map(id => {
@@ -82,25 +77,28 @@ animeProblems.addEventListener('submit', destination => {
     let problemIndex = document.querySelector("#requestedProblem").selectedIndex
             if (problemIndex == [0]) { 
                 problem.innerHTML = `
-                <h2> The Deck and The Cards </h2>
+                <h2> Basic Game Mechanics </h2>
+                <h3> Life Points </h3>
                 <p>
-                The deck is where the majority of your cards will reside and consists of your Spell, Trap, and Main Deck Monster cards. At the start of the game, each player draws 5 cards and the turn player 
-                draws a 6th card to start their turn. From there, depending on what type of cards are in their hand, the turn player can either Summon a Monster, set a card, place it 
-                face down in whatever zone it can go in, or just end their turn. Keep in mind, the maximum number of cards a player can have in their hand at the end of their turn is 7. If they have 
-                more than that you would have to discard cards to the Graveyard.
+                In the TCG Life Points always start at 8000. With that in mind how many Life Points do you think the Anime Starts with? 4000? 3000? Well the answer is however many the writers felt like that 
+                day. Typically it was 4000 but 2000, 1000, and basically any other number has been used. Why? No idea. My best guess is the writers wanted flexibility with how long duels took, but they 
+                have much more creative ways of doing that too.
                 </p>
 
-                <h3> Spell Cards </h3>
-                <img src="${cardImageGet("Pot of Greed")} alt = "Pot of Greed"/>
+                <h3> Summoning Monsters </h3>
+                <img src="${cardImageGet("Blue-Eyes White Dragon")} alt = "Blue-Eyes White Dragon"/>
                 <p>
-                The Spell Card category consists of 5 main types, Field Spells, Normal Spells, Equip Spells, Continuous Spells, and Quick Play Spells. Field, Normal, Equip, and Continuous spells can only be activated by a player 
-                during their turn whereas a Quickplay spell can be set in the Spell & Trap Zone and then activated on your opponents turn. Equip spells must also be equipted to a monster.
+                Quick refresh for those who didn't start with The Basics page, in Yu-Gi-Oh! you are only able to Normal Summon 1 monster per turn and if that monster is above level 5, a Tribute Summon 
+                must be performed where 1 monster is tributed for the summon of a level 5-6 monster and 2 monsters are tributed for a monster level 7 or above. In the anime you can not only summon level 5+ 
+                monsters without any tributing, you can also Normal Summon multiple times per turn. Sometimes, other times characters don't do that even when it would be very helpful. This was famously done 
+                by popular antagonist turned anti-hero Seto Kaiba, who summoned 3 Blue-Eyes White Dragons on one turn. Why was this allowed? My best guess is because he is very rich.
                 </p>
-                <h4> Activating Spell Cards</h4>
+                <img src="images/Triple_Blue-Eyes.png" alt="Screw the rules"/>
                 <p>
-                Normal, Quickplay, and Continous spells are activated in a Spell & Trap card zone while a Field spell is activated in the Field Zone. On activation and effect resolution, performing the action 
-                the card says it does like drawing 2 cards, a Normal or Quickplay spell will go to the Graveyard while Field and Continuous spells stay in the zone they were activated in.
+                Another thing about summoning, players in the Anime often summon monsters in face up defense position, commonly done by the main character with Giant Soldier of Stone, which is not allowed. 
+                This isn't as big a deal as the triple Blue-Eyes summon, but is worth mentioning.
                 </p>
+                <img src="${cardImageGet("Giant Soldier of Stone")} alt = "Giant Soldier of Stone"/>
 
                 <h3> Trap Cards </h3>
                 <img src="${cardImageGet("Trap Hole")} alt = "Trap Hole"/>
@@ -110,58 +108,83 @@ animeProblems.addEventListener('submit', destination => {
                 </p>
                 <h4> Activating Trap Cards</h4>
                 <p>
-                Trap Cards are normally activatable in response to an action taken by your opponent. Take the above card, Trap Hole for instance. If you oppenent Normal or Flip summons a monster with 1000+ Attack 
-                and Trap Hole is set on your field, you can activate the card by flipping it face up and then the effect will resolve. When a Trap card resolves, it will go to the Graveyard. 
-                </p>
-
-                <h3> Monster Cards </h3>
-                <img src="${cardImageGet("Red-Eyes Black Dragon")} alt = "Red-Eyes Black Dragon"/>
-                <p>
-                Monster cards are the most basic card available to you. They will have an attack point value, a defense point value, and a level, denoted by stars at the top. They may also have an effect which can 
-                be seen in the textbox below the picture.
-                </p>
-                <h4> Summoning Monster Cards </h4>
-                <h5> Level 4 or Lower Monsters </h5> 
-                <img src="${cardImageGet("Gemini Elf")} alt = "Gemini Elf"/>
-                <p>
-                    Level 4 or lower monsters can be Normal summoned in attack position or Set face down in defense postion freely to the field. Keep in mind, you can only Normal summon or Set 
-                    once per turn.
-                </p>
-                <h5> Level 5 or Higher Monsters </h5>
-                <img src="${cardImageGet("Blue-Eyes White Dragon")} alt = "Blue-Eyes White Dragon"/>
-                <p>
-                    Level 5 or higher monsters require a tribute to be Normal summoned in attack position or Set face down to the field. A tribute means that a monster you currently have on field will be tributed, going to 
-                    the graveyard to summon the monster. You need to tribute 1 monster on the field to summon a level 5 or 6 monster or 2 monsters for a level 7 or higher monster. A Tribute summon counts as 
-                    the one Normal summon per turn as well and thus cannot be used if you have already Normal summoned another monster that turn.
-                </p>
-                <h5> Special Summon Monsters </h5>
-                <img src="${cardImageGet("Monster Reborn")} alt = "Monster Reborn"/>
-                <p>
-                    Some cards have effects that allow monsters to be special summoned. Monster Reborn for example, can special summon any monster from your Graveyard regardless of its level. For special summons, 
-                    the only way to know if a card allows for a special summon is to read it and it will have the conditions of the summon on it.
+                Trap Cards are normally activatable in response to an action taken by your opponent and have to be set before their activation. In the Anime players can use them whenever they feel like. 
+                I'd say just like Spell cards but no. Traps can be set whenever and can even activate on their own. Why? No idea. Every Trap is just <a href="${cardImageGet("Infinite Impermanence")}" target="_blank">Infinite Impermanence</a> now I guess
                 </p>
                 `
             } if (problemIndex == [1]) { 
                 problem.innerHTML = `
-                <h2>The Monster Card Zone</h2>
-                <img src="${cardImageGet("Dark Magician")} alt = "Dark Magician"/>
+                <h2>Broken Card Design</h2>
+                <img src="${cardImageGet("Toon World")} alt = "Toon World"/>
                 <p>
-                These 5 zones are where monsters from either the Deck or Fusion Deck are summoned or set to. Any other type of card may not be put into one of these zones. From this zone a monster can  activate 
-                its effect, attack, or do nothing and remain on the field. The effect is typically only activatable on your turn but if denoted with (Quick Effect) it can also be activated on your 
-                opponents turn. Monsters cannot be removed from this zone without cause. For instance, if all 5 of your zones are ocupied and you draw a level 4 monster 
-                that you want to summon, you can't unless some other card you have can remove a monster from the field. You can't just remove a monster because you want to.
+                I want you to look at the above card Toon World. It's a Field Spell that takes 1000 LP to activate and has no other effect. Now take a look at this Toon World:
+                </p>
+                <img src="images/animetoonworld.jpg" alt="Anime Toon World"/>
+                <p>
+                This is the Anime version and just look at all that text. Battle protection, Effect negation, and Monster protection. This is not how this card works but whatever I guess. The writers 
+                wanted a fun storyline and this is what they came up with.
+                </p>
+                <h3> The God Cards </h3>
+                <p>
+                The God Cards are where this issue of card balancing comes to a head. In the TCG the God cards have always been cool and fun but never good since they take 3 Tributes to summon and aren't 
+                as powerful as they seem, sure they have high attack but a single Raigeki beats them all. However, in the Anime, they are all completely busted and none is more busted that The Winged Dragon 
+                of Ra.
+                </p>
+                <img src="${cardImageGet("The Winged Dragon of Ra")} alt = "The Winged Dragon of Ra"/>
+                <p>
+                The above card is the 'real' Ra. And it's not that bad on its face. It can't be Special Summoned and requires 3 Tributes, but you your opponent can't activate cards when its summoned 
+                an you can spend all but 100 of your LP to give it a bunch of Attack and Defense Points and it can destroy monster 1 monster on the field if you pay 1000 LP. Noteably, 
+                since this effect does not say Once per turn or anything like that this can be used as many times as you like so long as you have the LP to pay.
+                </p>
+                <img src="images/animera.jpg" alt="Anime Ra"/>
+                <p>
+                And this is Anime Ra and oh god. So it has all of the same effects as the real Ra, but is also completely unaffected by your opponents card effects, can tribute other monsters to gain even 
+                more attack when it is involved in an attack, can send all your opponents monster's to the graveyard if it attacks, has the option of having its attack and defense become 
+                the combined values of its Tributes, let's you tribute itself to gain a bunch of LP, and can be special summoned with <a href="${cardImageGet("Monster Reborn")}" target="_blank">Monster Reborn</a>. 
+                This version is obviously so much stronger and is the best example of the Anime deciding what cards do on its own.
                 </p>
                 `
             } if (problemIndex == [2]) { 
                 problem.innerHTML = `
-                <h2> The Spell & Trap Zone </h2>
-                <img src="${cardImageGet("Axe of Despair")} alt = "Axe of Despair"/>
+                <h2> This isn't How Anything Works </h2>
                 <p>
-                There 5 zones are where your Spell and Trap cards, excluding Field spell cards, can be set or activated in. Any other type of card may not be put into one of these zones. 
-                If all these zones are occupied you cannot set or 
-                activate additional Spells or Traps until a zone is cleared. This is more easily done then with clearing a Monster zone, as activating a Spell or Trap is easier than removing a Monster, but 
-                it is still something to keep in mind.
+                As the prior section discussed, the Anime has a tendency to modify cards and what they can do. Usually though, it still makes sense in the relm of the card game and is just about making 
+                cards stronger or weaker as necessary. And then it can also go completely off the rails and these are my two favorite examples of that.
                 </p>
+                <h3> Fun with Lab Wall </h3>
+                <img src="${cardImageGet("Labyrinth Wall")} alt = "Labyrinth Wall"/>
+                <p>
+                This is Labyrinth Wall, a level 5 vanilla, noneffect, monster. This card can be summoned in face up defense without Tributing in the Anime but that's not close 
+                to the worst part. In the Anime, when this card was played, it made a literal labyrinth out of the dueling field that monsters had to walk to the end of to win the duel. The maze had its 
+                own set of rediculous rules but still, this isn't how anything works.
+                </p>
+                <img src="images/animelab.jpg" alt="Labyrinth Wall Anime"/>
+                <h3> Attack the Moon! </h3>
+                <img src="${cardImageGet("Giant Soldier of Stone")} alt = "Giant Soldier of Stone"/>
+                <p>
+                Back with our friend Giant Solder of Stone. A level 4 vanilla monster. Nothing much going on here.
+                </p>
+                <img src="${cardImageGet("Mystical Moon")} alt = "Mystical Moon"/>
+                <p>
+                And here is a new friend, Mystical Moon. A simple equip spell that increased the attack and defense of the monster its equipped with. I'm sure nothing wierd happened when these two 
+                interacted in the anime. Let's check in on that.
+                </p>
+                <img src="images/waterduel.PNG" alt="Water Duel"/>
+                <p>
+                Well look at that. See totally normal. Half the field is water that monster can hide under and prevent the opponent from knowing what they are. Yes totally fine moving on.
+                </p>
+                <img src="images/attacking.PNG" alt="Attacking"/>
+                <p>
+                And here we go more normal stuff. The Mystical Moon was activated causing the water to rise and making it so Yugi, the main character, can't summon anymore monsters than the Giant 
+                Soldier of Stone he already has out. Oh and 3 monsters are going to attack the Giant Soldier at the same time because that totally works and adds their attack power together so they can 
+                get over the 2000 Defense the monster has which again, totally works.
+                </p>
+                <img src="images/attackthemoon.PNG" alt="Attack The Moon"/>
+                <p>
+                And oh look, the Giant Soldier hit the moon with its sword, destroying it, causing the water to eventually go away, destroying all the monsters and winning the duel. This is totally 
+                how this all works and is great and fine.
+                </p>
+                <h3> THIS IS NOT HOW ANYTHING WORKS </h3>
                 `
             } if (problemIndex == [3]) { 
                 problem.innerHTML = ``
