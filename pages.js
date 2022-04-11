@@ -65,6 +65,8 @@ Promise.all(requests)
         responses.forEach(response => {
             return localStorage.setItem(`${response.data[0].name}`, JSON.stringify({ data: response.data[0].card_images[0].image_url}))
         })
+    }) .catch((error) => {
+        location.href = "error.html"
     })
 
 function cardImageGet(cardName){
