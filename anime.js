@@ -73,15 +73,15 @@ function cardImageGet(cardName){
     return localStorage.getItem(`${cardName}`).slice(9,78)
 }
 
-const firstLearning = document.querySelector(".firstLearning")
-let requestedLearning = document.querySelector("#requestedLearning")
-let learning = document.querySelector(".learning")
+const animeProblems = document.querySelector(".animeProblems")
+let requestedProblem = document.querySelector("#requestedProblem")
+let problem = document.querySelector(".problem")
 
-firstLearning.addEventListener('submit', destination => {
+animeProblems.addEventListener('submit', destination => {
     destination.preventDefault()
-    let learningIndex = document.querySelector("#requestedLearning").selectedIndex
-            if (learningIndex == [0]) { 
-                learning.innerHTML = `
+    let problemIndex = document.querySelector("#requestedProblem").selectedIndex
+            if (problemIndex == [0]) { 
+                problem.innerHTML = `
                 <h2> The Deck and The Cards </h2>
                 <p>
                 The deck is where the majority of your cards will reside and consists of your Spell, Trap, and Main Deck Monster cards. At the start of the game, each player draws 5 cards and the turn player 
@@ -141,8 +141,8 @@ firstLearning.addEventListener('submit', destination => {
                     the only way to know if a card allows for a special summon is to read it and it will have the conditions of the summon on it.
                 </p>
                 `
-            } if (learningIndex == [1]) {
-                learning.innerHTML = `
+            } if (problemIndex == [1]) { 
+                problem.innerHTML = `
                 <h2>The Monster Card Zone</h2>
                 <img src="${cardImageGet("Dark Magician")} alt = "Dark Magician"/>
                 <p>
@@ -152,8 +152,8 @@ firstLearning.addEventListener('submit', destination => {
                 that you want to summon, you can't unless some other card you have can remove a monster from the field. You can't just remove a monster because you want to.
                 </p>
                 `
-            } if (learningIndex == [2]) {
-                learning.innerHTML = `
+            } if (problemIndex == [2]) { 
+                problem.innerHTML = `
                 <h2> The Spell & Trap Zone </h2>
                 <img src="${cardImageGet("Axe of Despair")} alt = "Axe of Despair"/>
                 <p>
@@ -163,49 +163,7 @@ firstLearning.addEventListener('submit', destination => {
                 it is still something to keep in mind.
                 </p>
                 `
-            } if (learningIndex == [3]) {
-                learning.innerHTML = `
-                <h2> The Field Zone </h2>
-                <img src="${cardImageGet("Toon World")} alt = "Toon World"/>
-                <p>
-                The Field zone is the only zone where a Field Spell card can either be set or activated. A set field spell card can't do anything and can only be activated on your next turn. An activated 
-                Field spell card has whatever effect that is detailed on the card. The effect is typically only activatable on your turn but if denoted with (Quick Effect) it can also be activated on your 
-                opponents turn.
-                </p>
-                `
-            } if (learningIndex == [4]) {
-                learning.innerHTML = `
-                <h2> The Graveyard </h2>
-                <img src="${cardImageGet("Foolish Burial")} alt = "Foolish Burial"/>
-                <p>
-                    The Graveyard is where all cards go by default when they leave the field. If a card is destroyed, a monster is attacked by a monster with a higher attack, a Normal spell or Trap is activated, 
-                    or a card is discarded it's destination is by default the graveyard.
-                </p>
-                `
-            } if (learningIndex == [5]) {
-                learning.innerHTML = `
-                <h2> The Banished Zone </h2>
-                <img src="${cardImageGet("Macro Cosmos")} alt = "Macro Cosmos"/>
-                <p>
-                    The Banished Zone is only utilized if a card specifically says it Banishes or Removes from play. The most popular way this is accomplished is with the card Macro Cosmos. This card says that 
-                    while it is on the field, any card sent to the Graveyard is Banished instead. Alternatively, Bottomless Trap Hole will destroy a summoned monster, send it to the Graveyard, and then Banish it.
-                </p>
-
-                `
-            } if (learningIndex == [6]) {
-                learning.innerHTML = `
-                <h2> The Fusion Deck </h2>
-                <img src="${cardImageGet("Blue-Eyes Ultimate Dragon")} alt = "Blue-Eyes Ultimate Dragon"/>
-                <p>
-                    This Deck only contains Fusion Monsters and has no limit on the number of cards that can be in it.
-                </p>
-                <h3> Fusion Summoning </h3>
-                <img src="${cardImageGet("Polymerization")} alt = "Polymerization"/>
-                <p>
-                    Fusion Summoning requires the Spell card Polymerization and the required Monsters listed on the Fusion Monster Card. These monsters are typically not 
-                    worth summoning as you need to use 3 cards, 2 monsters minimum and the Polymerization, to summon 1 monster.
-                `
-            } if (learningIndex == [7]) {
-                learning.innerHTML = ``
+            } if (problemIndex == [3]) { 
+                problem.innerHTML = ``
             }
         })

@@ -35,7 +35,7 @@ startingPlaceField.addEventListener('submit', destination => {
 })
 
 
-const basicsMain = document.querySelector(".basicsMain")
+const basicsMain = document.querySelector("main")
 let username = localStorage.getItem("username")
 
 function addGreeting(username) {
