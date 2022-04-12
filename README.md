@@ -1,3 +1,12 @@
+# My Production Website
+
+My website is for people who are interested in the card game Yu-Gi-Oh!. Both those who want to know how the game is played in real life and those who want to know some of the differences between the 
+real life game and the anime. It also has a fully operational card search function that will display the basic information about a card as well as a picture based on the name submitted by the user.
+
+https://blairhbris.github.io/production-website/
+
+![](https://i2.paste.pics/GO3PU.png
+
 # Production Website
 
 ## Features
