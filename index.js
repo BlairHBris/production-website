@@ -25,8 +25,6 @@ startingPlaceField.addEventListener('submit', destination => {
         location.href = "anime.html"
     } if (request == "Card Search") {
         location.href = "cs.html"
-    } if (request == "TCG of Today") {
-        location.href = "tcg.html"
     } if (request == "The Basics") {
         location.href = "basics.html"
     } if (request == "Homepage") {
