@@ -85,7 +85,9 @@ searcherField.addEventListener('submit', name => {
         addCardImage(parsedResponse)
         addCardDescription(parsedResponse)
     }).catch((error) => {
-        location.href = "error.html"
+        cardSpot.innerHTML = `
+        <p> Invalid Card Name, please enter a different Card Name. </p>
+        `
     })
     enteredSearcher.value = ""
 })
