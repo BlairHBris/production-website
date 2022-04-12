@@ -112,6 +112,11 @@ button{
     font-size: 1.5em;
 }
 
+#clear{
+    margin-top: 1em;
+    font-size: 1.5em;
+}
+
 #backToZone{
     margin-top: 1.5em;
     margin-bottom: 1.5em;

@@ -18,39 +18,29 @@
         <li class="nav"><a href="index.html">Homepage</a></li>
         <li class="nav"><a href="basics.html">The Basics</a></li>
         <li class="nav"><a href="anime.html">Anime</a></li>
-        <li class="nav"><a href="atcg.html">Card Search</a></li>
+        <li class="nav"><a href="cs.html">Card Search</a></li>
     </ul>
 
     <main>
-        <h1>GOAT Format</h1>
+        <h1>Card Searcher</h1>
         <p>
-            So you want to learn about how Yu-Gi-Oh! works in the Anime then? Well, no time like the present to rip off the bandaid, the Anime, at least the original, is not only completely inaccurate 
-            to the competitive gameplay that was taking place in the TCG at the same time, it also breaks just about 90% of the basic rules of the game. From the banal to the broken cards to the bizzare, 
-            the Anime is essentially in its own world when it comes to the card game.
+            Use the input field below to look up the name of any Yu-gi-Oh! card you can think of for some information on it!
         </p>
-        <br>
-        <p>
-            Use the below selector to pick where to start on this wacky ride!
-        </p>
-        <form class = animeProblems id="anime">
-            <label for="zoneSelector">Rule Breaks</label>
-            <select name="zoneSelector" id="requestedProblem">
-                <option value="banal">Basic Rule Breaks</option>
-                <option value="bcd">Broken Card Design</option>
-                <option value="wtf">That's Not How Anything Works</option>
-                <option value="clear">Clear</option>
-            </select>
-            <input type="submit" type="submit">
+        <form class = searcher id="searcher">
+            <label for="searcher">Search Here</label>
+            <input type="text" name="searcher" id="enteredSearcher" placeholder="Monster Reborn">
+            <input class = "submit" type="submit" value="Generate">
         </form>
+        <p class="cardSpot"></p>
+        <button id="clear">Clear</button>
         <br>
-        <p class="problem"></p>
-        <button id="backToZone"><a href="#anime">Back to Rule Breaks</a></button>
+        <button id="backToZone"><a href="#searcher">Back to Searcher</a></button>
         <form class="startingPlace">
             <label for="startingPlace">Select where you would like to go.</label>
             <select name="startingPlace" id="requestedStartingPlace">
                 <option value="basics">The Basics</option>
                 <option value="anime">Anime</option>
-                <option value="atcg">Card Search</option>
+                <option value="cs">Card Search</option>
                 <option value="home">Homepage</option>
             </select>
             <input class="submit" type="submit" value="Go">
