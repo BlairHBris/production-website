@@ -14,8 +14,8 @@ startingPlaceField.addEventListener('submit', destination => {
     let request = (requestedStartingPlace[requestIndex].text)
     if (request == "Anime") {
         location.href = "anime.html"
-    } if (request == "TCG of the Anime") {
-        location.href = "atcg.html"
+    } if (request == "Card Search") {
+        location.href = "cs.html"
     } if (request == "TCG of Today") {
         location.href = "tcg.html"
     } if (request == "The Basics") {
