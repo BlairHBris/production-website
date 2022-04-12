@@ -91,7 +91,7 @@ animeProblems.addEventListener('submit', destination => {
                 Quick refresh for those who didn't start with The Basics page, in Yu-Gi-Oh! you are only able to Normal Summon 1 monster per turn and if that monster is above level 5, a Tribute Summon 
                 must be performed where 1 monster is tributed for the summon of a level 5-6 monster and 2 monsters are tributed for a monster level 7 or above. In the anime you can not only summon level 5+ 
                 monsters without any tributing, you can also Normal Summon multiple times per turn. Sometimes, other times characters don't do that even when it would be very helpful. This was famously done 
-                by popular antagonist turned anti-hero Seto Kaiba, who summoned 3 Blue-Eyes White Dragons on one turn. Why was this allowed? My best guess is because he is very rich.
+                by popular antagonist turned anti-hero Seto Kaiba, who summoned 3, level 8 Blue-Eyes White Dragons on one turn. Why was this allowed? My best guess is because he is very rich.
                 </p>
                 <img src="images/Triple_Blue-Eyes.png" alt="Screw the rules"/>
                 <p>
@@ -100,16 +100,12 @@ animeProblems.addEventListener('submit', destination => {
                 </p>
                 <img src="${cardImageGet("Giant Soldier of Stone")} alt = "Giant Soldier of Stone"/>
 
-                <h3> Trap Cards </h3>
+                <h4> Activating Trap Cards</h4>
                 <img src="${cardImageGet("Trap Hole")} alt = "Trap Hole"/>
                 <p>
-                Trap cards are unique in that they must be set for one turn before they can be used. They must be set in the Spell & Trap Zone during your turn and then you must wait until at least your 
-                opponents next turn to activate it, after which you can activate it at any point.
-                </p>
-                <h4> Activating Trap Cards</h4>
-                <p>
                 Trap Cards are normally activatable in response to an action taken by your opponent and have to be set before their activation. In the Anime players can use them whenever they feel like. 
-                I'd say just like Spell cards but no. Traps can be set whenever and can even activate on their own. Why? No idea. Every Trap is just <a href="${cardImageGet("Infinite Impermanence")}" target="_blank">Infinite Impermanence</a> now I guess
+                I'd say just like Spell cards but no. Traps can be set whenever and can even activate on their own. Why? No idea. Every Trap is just 
+                <a href="${cardImageGet("Infinite Impermanence")}" target="_blank">Infinite Impermanence</a> now I guess
                 </p>
                 `
             } if (problemIndex == [1]) { 
