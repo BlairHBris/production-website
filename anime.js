@@ -1,80 +1,77 @@
-const toTopButton = document.querySelector("#backToTop")
 
-function backToTop() {
-    document.documentElement.scrollTop = 0;
+function backToTop () {
+  document.documentElement.scrollTop = 0
 }
-document.querySelector("#backToTop").onclick = backToTop
+document.querySelector('#backToTop').onclick = backToTop
 
-const startingPlaceField = document.querySelector(".startingPlace")
-let requestedStartingPlace = document.querySelector("#requestedStartingPlace")
+const startingPlaceField = document.querySelector('.startingPlace')
+const requestedStartingPlace = document.querySelector('#requestedStartingPlace')
 
 startingPlaceField.addEventListener('submit', destination => {
-    destination.preventDefault()
-    let requestIndex = document.querySelector("#requestedStartingPlace").selectedIndex
-    let request = (requestedStartingPlace[requestIndex].text)
-    if (request == "Anime") {
-        location.href = "anime.html"
-    } if (request == "Card Search") {
-        location.href = "cs.html"
-    } if (request == "The Basics") {
-        location.href = "basics.html"
-    } if (request == "Homepage") {
-        location.href = "index.html"
-    }
+  destination.preventDefault()
+  const requestIndex = document.querySelector('#requestedStartingPlace').selectedIndex
+  const request = (requestedStartingPlace[requestIndex].text)
+  if (request === 'Anime') {
+    location.href = 'anime.html'
+  } if (request === 'Card Search') {
+    location.href = 'cs.html'
+  } if (request === 'The Basics') {
+    location.href = 'basics.html'
+  } if (request === 'Homepage') {
+    location.href = 'index.html'
+  }
 })
 
-const main = document.querySelector("main")
-let username = localStorage.getItem("username")
+const main = document.querySelector('main')
+const username = localStorage.getItem('username')
 
-function addGreeting() {
-    const greeting = document.createElement("p")
-    greeting.innerHTML = `
+function addGreeting () {
+  const greeting = document.createElement('p')
+  greeting.innerHTML = `
         <h1 class="greeting">Welcome ${username}!</>
     `
-    main.prepend(greeting)
+  main.prepend(greeting)
 }
 
 addGreeting()
 
-const api = `https://db.ygoprodeck.com/api/v7/cardinfo.php`
-
 const cardIds = [
-    89631139,
-    13039848,
-    10045474,
-    15259703,
-    67284908,
-    10000010,
-    4206964,
-    36607978
+  89631139,
+  13039848,
+  10045474,
+  15259703,
+  67284908,
+  10000010,
+  4206964,
+  36607978
 ]
 
 const requests = cardIds.map(id => {
-    return fetch(`https://db.ygoprodeck.com/api/v7/cardinfo.php?id=${id}`
-    ).then((response) => response.json())
+  return fetch(`https://db.ygoprodeck.com/api/v7/cardinfo.php?id=${id}`
+  ).then((response) => response.json())
 })
 Promise.all(requests)
-    .then(responses => {
-        responses.forEach(response => {
-            return localStorage.setItem(`${response.data[0].name}`, JSON.stringify({ data: response.data[0].card_images[0].image_url}))
-        })
-    }) .catch((error) => {
-        location.href = "error.html"
+  .then(responses => {
+    responses.forEach(response => {
+      return localStorage.setItem(`${response.data[0].name}`, JSON.stringify({ data: response.data[0].card_images[0].image_url }))
     })
+  }).catch((error) => {
+    location.href = 'error.html'
+  })
 
-function cardImageGet(cardName){
-    return localStorage.getItem(`${cardName}`).slice(9,78)
+function cardImageGet (cardName) {
+  return localStorage.getItem(`${cardName}`).slice(9, 78)
 }
 
-const animeProblems = document.querySelector(".animeProblems")
-let requestedProblem = document.querySelector("#requestedProblem")
-let problem = document.querySelector(".problem")
+const animeProblems = document.querySelector('.animeProblems')
+
+const problem = document.querySelector('.problem')
 
 animeProblems.addEventListener('submit', destination => {
-    destination.preventDefault()
-    let problemIndex = document.querySelector("#requestedProblem").selectedIndex
-            if (problemIndex == [0]) { 
-                problem.innerHTML = `
+  destination.preventDefault()
+  const problemIndex = document.querySelector('#requestedProblem').selectedIndex
+  if (problemIndex === [0]) {
+    problem.innerHTML = `
                 <h2> Basic Game Mechanics </h2>
                 <h3> Life Points </h3>
                 <p>
@@ -84,7 +81,7 @@ animeProblems.addEventListener('submit', destination => {
                 </p>
 
                 <h3> Summoning Monsters </h3>
-                <img src="${cardImageGet("Blue-Eyes White Dragon")} alt = "Blue-Eyes White Dragon"/>
+                <img src="${cardImageGet('Blue-Eyes White Dragon')} alt = "Blue-Eyes White Dragon"/>
                 <p>
                 Quick refresh for those who didn't start with The Basics page, in Yu-Gi-Oh! you are only able to Normal Summon 1 monster per turn and if that monster is above level 5, a Tribute Summon 
                 must be performed where 1 monster is tributed for the summon of a level 5-6 monster and 2 monsters are tributed for a monster level 7 or above. In the anime you can not only summon level 5+ 
@@ -96,20 +93,20 @@ animeProblems.addEventListener('submit', destination => {
                 Another thing about summoning, players in the Anime often summon monsters in face up defense position, commonly done by the main character with Giant Soldier of Stone, which is not allowed. 
                 This isn't as big a deal as the triple Blue-Eyes summon, but is worth mentioning.
                 </p>
-                <img src="${cardImageGet("Giant Soldier of Stone")} alt = "Giant Soldier of Stone"/>
+                <img src="${cardImageGet('Giant Soldier of Stone')} alt = "Giant Soldier of Stone"/>
 
                 <h4> Activating Trap Cards</h4>
-                <img src="${cardImageGet("Trap Hole")} alt = "Trap Hole"/>
+                <img src="${cardImageGet('Trap Hole')} alt = "Trap Hole"/>
                 <p>
                 Trap Cards are normally activatable in response to an action taken by your opponent and have to be set before their activation. In the Anime players can use them whenever they feel like. 
                 I'd say just like Spell cards but no. Traps can be set whenever and can even activate on their own. Why? No idea. Every Trap is just 
-                <a href="${cardImageGet("Infinite Impermanence")}" target="_blank">Infinite Impermanence</a> now I guess
+                <a href="${cardImageGet('Infinite Impermanence')}" target="_blank">Infinite Impermanence</a> now I guess
                 </p>
                 `
-            } if (problemIndex == [1]) { 
-                problem.innerHTML = `
+  } if (problemIndex === [1]) {
+    problem.innerHTML = `
                 <h2>Broken Card Design</h2>
-                <img src="${cardImageGet("Toon World")} alt = "Toon World"/>
+                <img src="${cardImageGet('Toon World')} alt = "Toon World"/>
                 <p>
                 I want you to look at the above card Toon World. It's a Field Spell that takes 1000 LP to activate and has no other effect. Now take a look at this Toon World:
                 </p>
@@ -124,7 +121,7 @@ animeProblems.addEventListener('submit', destination => {
                 as powerful as they seem, sure they have high attack but a single Raigeki beats them all. However, in the Anime, they are all completely busted and none is more busted that The Winged Dragon 
                 of Ra.
                 </p>
-                <img src="${cardImageGet("The Winged Dragon of Ra")} alt = "The Winged Dragon of Ra"/>
+                <img src="${cardImageGet('The Winged Dragon of Ra')} alt = "The Winged Dragon of Ra"/>
                 <p>
                 The above card is the 'real' Ra. And it's not that bad on its face. It can't be Special Summoned and requires 3 Tributes, but you your opponent can't activate cards when its summoned 
                 an you can spend all but 100 of your LP to give it a bunch of Attack and Defense Points and it can destroy monster 1 monster on the field if you pay 1000 LP. Noteably, 
@@ -134,19 +131,19 @@ animeProblems.addEventListener('submit', destination => {
                 <p>
                 And this is Anime Ra and oh god. So it has all of the same effects as the real Ra, but is also completely unaffected by your opponents card effects, can tribute other monsters to gain even 
                 more attack when it is involved in an attack, can send all your opponents monster's to the graveyard if it attacks, has the option of having its attack and defense become 
-                the combined values of its Tributes, let's you tribute itself to gain a bunch of LP, and can be special summoned with <a href="${cardImageGet("Monster Reborn")}" target="_blank">Monster Reborn</a>. 
+                the combined values of its Tributes, let's you tribute itself to gain a bunch of LP, and can be special summoned with <a href="${cardImageGet('Monster Reborn')}" target="_blank">Monster Reborn</a>. 
                 This version is obviously so much stronger and is the best example of the Anime deciding what cards do on its own.
                 </p>
                 `
-            } if (problemIndex == [2]) { 
-                problem.innerHTML = `
+  } if (problemIndex === [2]) {
+    problem.innerHTML = `
                 <h2> This isn't How Anything Works </h2>
                 <p>
                 As the prior section discussed, the Anime has a tendency to modify cards and what they can do. Usually though, it still makes sense in the relm of the card game and is just about making 
                 cards stronger or weaker as necessary. And then it can also go completely off the rails and these are my two favorite examples of that.
                 </p>
                 <h3> Fun with Lab Wall </h3>
-                <img src="${cardImageGet("Labyrinth Wall")} alt = "Labyrinth Wall"/>
+                <img src="${cardImageGet('Labyrinth Wall')} alt = "Labyrinth Wall"/>
                 <p>
                 This is Labyrinth Wall, a level 5 vanilla, noneffect, monster. This card can be summoned in face up defense without Tributing in the Anime but that's not close 
                 to the worst part. In the Anime, when this card was played, it made a literal labyrinth out of the dueling field that monsters had to walk to the end of to win the duel. The maze had its 
@@ -154,11 +151,11 @@ animeProblems.addEventListener('submit', destination => {
                 </p>
                 <img src="images/animelab.jpg" alt="Labyrinth Wall Anime"/>
                 <h3> Attack the Moon! </h3>
-                <img src="${cardImageGet("Giant Soldier of Stone")} alt = "Giant Soldier of Stone"/>
+                <img src="${cardImageGet('Giant Soldier of Stone')} alt = "Giant Soldier of Stone"/>
                 <p>
                 Back with our friend Giant Solder of Stone. A level 4 vanilla monster. Nothing much going on here.
                 </p>
-                <img src="${cardImageGet("Mystical Moon")} alt = "Mystical Moon"/>
+                <img src="${cardImageGet('Mystical Moon')} alt = "Mystical Moon"/>
                 <p>
                 And here is a new friend, Mystical Moon. A simple equip spell that increased the attack and defense of the monster its equipped with. I'm sure nothing wierd happened when these two 
                 interacted in the anime. Let's check in on that.
@@ -180,7 +177,7 @@ animeProblems.addEventListener('submit', destination => {
                 </p>
                 <h3> THIS IS NOT HOW ANYTHING WORKS </h3>
                 `
-            } if (problemIndex == [3]) { 
-                problem.innerHTML = ``
-            }
-        })
+  } if (problemIndex === [3]) {
+    problem.innerHTML = ''
+  }
+})
