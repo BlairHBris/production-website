@@ -5,7 +5,7 @@ real life game and the anime. It also has a fully operational card search functi
 
 https://blairhbris.github.io/production-website/
 
-![](https://i2.paste.pics/GO3PU.png
+![](https://i2.paste.pics/GO3PU.png)
 
 # Production Website
 
