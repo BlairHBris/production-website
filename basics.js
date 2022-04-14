@@ -73,10 +73,10 @@ function cardImageGet (cardName) {
 const firstLearning = document.querySelector('.firstLearning')
 const learning = document.querySelector('.learning')
 
-firstLearning.addEventListener('submit', event => {
+firstLearning.addEventListener("submit", event => {
   event.preventDefault()
   const learningIndex = document.querySelector('#requestedLearning').selectedIndex
-  if (learningIndex === [0]) {
+  if (learningIndex == [0]) {
     learning.innerHTML = `
                 <h2> The Deck and The Cards </h2>
                 <p>
@@ -86,7 +86,9 @@ firstLearning.addEventListener('submit', event => {
                 more than that you would have to discard cards to the Graveyard.
                 </p>
                 <h3> Spell Cards </h3>
+                <div class="centeringDiv">
                 <img src="${cardImageGet('Pot of Greed')} alt = "Pot of Greed"/>
+                </div>
                 <p>
                 The Spell Card category consists of 5 main types, Field Spells, Normal Spells, Equip Spells, Continuous Spells, and Quick Play Spells. Field, Normal, Equip, and Continuous spells can only be activated by a player 
                 during their turn whereas a Quickplay spell can be set in the Spell & Trap Zone and then activated on your opponents turn. Equip spells must also be equipted to a monster.
@@ -97,7 +99,9 @@ firstLearning.addEventListener('submit', event => {
                 the card says it does like drawing 2 cards, a Normal or Quickplay spell will go to the Graveyard while Field and Continuous spells stay in the zone they were activated in.
                 </p>
                 <h3> Trap Cards </h3>
+                <div class="centeringDiv">
                 <img src="${cardImageGet('Trap Hole')} alt = "Trap Hole"/>
+                </div>
                 <p>
                 Trap cards are unique in that they must be set for one turn before they can be used. They must be set in the Spell & Trap Zone during your turn and then you must wait until at least your 
                 opponents next turn to activate it, after which you can activate it at any point.
@@ -108,36 +112,46 @@ firstLearning.addEventListener('submit', event => {
                 and Trap Hole is set on your field, you can activate the card by flipping it face up and then the effect will resolve. When a Trap card resolves, it will go to the Graveyard. 
                 </p>
                 <h3> Monster Cards </h3>
+                <div class="centeringDiv">
                 <img src="${cardImageGet('Red-Eyes Black Dragon')} alt = "Red-Eyes Black Dragon"/>
+                </div>
                 <p>
                 Monster cards are the most basic card available to you. They will have an attack point value, a defense point value, and a level, denoted by stars at the top. They may also have an effect which can 
                 be seen in the textbox below the picture.
                 </p>
                 <h4> Summoning Monster Cards </h4>
                 <h5> Level 4 or Lower Monsters </h5> 
+                <div class="centeringDiv">
                 <img src="${cardImageGet('Gemini Elf')} alt = "Gemini Elf"/>
+                </div>
                 <p>
                     Level 4 or lower monsters can be Normal summoned in attack position or Set face down in defense postion freely to the field. Keep in mind, you can only Normal summon or Set 
                     once per turn.
                 </p>
                 <h5> Level 5 or Higher Monsters </h5>
+                <div class="centeringDiv">
                 <img src="${cardImageGet('Blue-Eyes White Dragon')} alt = "Blue-Eyes White Dragon"/>
+                </div>
                 <p>
                     Level 5 or higher monsters require a tribute to be Normal summoned in attack position or Set face down to the field. A tribute means that a monster you currently have on field will be tributed, going to 
                     the graveyard to summon the monster. You need to tribute 1 monster on the field to summon a level 5 or 6 monster or 2 monsters for a level 7 or higher monster. A Tribute summon counts as 
                     the one Normal summon per turn as well and thus cannot be used if you have already Normal summoned another monster that turn.
                 </p>
                 <h5> Special Summon Monsters </h5>
+                <div class="centeringDiv">
                 <img src="${cardImageGet('Monster Reborn')} alt = "Monster Reborn"/>
+                </div>
                 <p>
                     Some cards have effects that allow monsters to be special summoned. Monster Reborn for example, can special summon any monster from your Graveyard regardless of its level. For special summons, 
                     the only way to know if a card allows for a special summon is to read it and it will have the conditions of the summon on it.
                 </p>
                 `
-  } if (learningIndex === [1]) {
+  } if (learningIndex == [1]) {
     learning.innerHTML = `
                 <h2>The Monster Card Zone</h2>
+                <div class="centeringDiv">
                 <img src="${cardImageGet('Dark Magician')} alt = "Dark Magician"/>
+                </div>
                 <p>
                 These 5 zones are where monsters from either the Deck or Fusion Deck are summoned or set to. Any other type of card may not be put into one of these zones. From this zone a monster can  activate 
                 its effect, attack, or do nothing and remain on the field. The effect is typically only activatable on your turn but if denoted with (Quick Effect) it can also be activated on your 
@@ -145,10 +159,12 @@ firstLearning.addEventListener('submit', event => {
                 that you want to summon, you can't unless some other card you have can remove a monster from the field. You can't just remove a monster because you want to.
                 </p>
                 `
-  } if (learningIndex === [2]) {
+  } if (learningIndex == [2]) {
     learning.innerHTML = `
                 <h2> The Spell & Trap Zone </h2>
+                <div class="centeringDiv">
                 <img src="${cardImageGet('Axe of Despair')} alt = "Axe of Despair"/>
+                </div>
                 <p>
                 There 5 zones are where your Spell and Trap cards, excluding Field spell cards, can be set or activated in. Any other type of card may not be put into one of these zones. 
                 If all these zones are occupied you cannot set or 
@@ -156,48 +172,58 @@ firstLearning.addEventListener('submit', event => {
                 it is still something to keep in mind.
                 </p>
                 `
-  } if (learningIndex === [3]) {
+  } if (learningIndex == [3]) {
     learning.innerHTML = `
                 <h2> The Field Zone </h2>
+                <div class="centeringDiv">
                 <img src="${cardImageGet('Toon World')} alt = "Toon World"/>
+                </div>
                 <p>
                 The Field zone is the only zone where a Field Spell card can either be set or activated. A set field spell card can't do anything and can only be activated on your next turn. An activated 
                 Field spell card has whatever effect that is detailed on the card. The effect is typically only activatable on your turn but if denoted with (Quick Effect) it can also be activated on your 
                 opponents turn.
                 </p>
                 `
-  } if (learningIndex === [4]) {
+  } if (learningIndex == [4]) {
     learning.innerHTML = `
                 <h2> The Graveyard </h2>
+                <div class="centeringDiv">
                 <img src="${cardImageGet('Foolish Burial')} alt = "Foolish Burial"/>
+                </div>
                 <p>
                     The Graveyard is where all cards go by default when they leave the field. If a card is destroyed, a monster is attacked by a monster with a higher attack, a Normal spell or Trap is activated, 
                     or a card is discarded it's destination is by default the graveyard.
                 </p>
                 `
-  } if (learningIndex === [5]) {
+  } if (learningIndex == [5]) {
     learning.innerHTML = `
                 <h2> The Banished Zone </h2>
+                <div class="centeringDiv">
                 <img src="${cardImageGet('Macro Cosmos')} alt = "Macro Cosmos"/>
+                </div>
                 <p>
                     The Banished Zone is only utilized if a card specifically says it Banishes or Removes from play. The most popular way this is accomplished is with the card Macro Cosmos. This card says that 
                     while it is on the field, any card sent to the Graveyard is Banished instead. Alternatively, Bottomless Trap Hole will destroy a summoned monster, send it to the Graveyard, and then Banish it.
                 </p>
                 `
-  } if (learningIndex === [6]) {
+  } if (learningIndex == [6]) {
     learning.innerHTML = `
                 <h2> The Fusion Deck </h2>
+                <div class="centeringDiv">
                 <img src="${cardImageGet('Blue-Eyes Ultimate Dragon')} alt = "Blue-Eyes Ultimate Dragon"/>
+                </div>
                 <p>
                     This Deck only contains Fusion Monsters and has no limit on the number of cards that can be in it.
                 </p>
                 <h3> Fusion Summoning </h3>
+                <div class="centeringDiv">
                 <img src="${cardImageGet('Polymerization')} alt = "Polymerization"/>
+                </div>
                 <p>
                     Fusion Summoning requires the Spell card Polymerization and the required Monsters listed on the Fusion Monster Card. These monsters are typically not 
                     worth summoning as you need to use 3 cards, 2 monsters minimum and the Polymerization, to summon 1 monster.
                 `
-  } if (learningIndex === [7]) {
+  } if (learningIndex == [7]) {
     learning.innerHTML = ''
   }
 })
