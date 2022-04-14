@@ -16,8 +16,8 @@ document.querySelector('#clear').addEventListener('click', event => {
 const startingPlaceField = document.querySelector('.startingPlace')
 const requestedStartingPlace = document.querySelector('#requestedStartingPlace')
 
-startingPlaceField.addEventListener('submit', destination => {
-  destination.preventDefault()
+startingPlaceField.addEventListener('submit', event => {
+  event.preventDefault()
   const requestIndex = document.querySelector('#requestedStartingPlace').selectedIndex
   const request = (requestedStartingPlace[requestIndex].text)
   if (request === 'Anime') {
@@ -73,8 +73,8 @@ function addCardDescription (card) {
 const searcherField = document.querySelector('.searcher')
 const enteredSearcher = document.querySelector('#enteredSearcher')
 
-searcherField.addEventListener('submit', name => {
-  name.preventDefault()
+searcherField.addEventListener('submit', event => {
+  event.preventDefault()
   const desiredCard = enteredSearcher.value
   console.log(desiredCard)
   fetch(`https://db.ygoprodeck.com/api/v7/cardinfo.php?name=${desiredCard}`)

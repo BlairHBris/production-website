@@ -9,8 +9,8 @@ document.querySelector('#backToTop').addEventListener('click', event => {
 const usernameField = document.querySelector('.username')
 const enteredUsername = document.querySelector('#enteredUsername')
 
-usernameField.addEventListener('submit', name => {
-  name.preventDefault()
+usernameField.addEventListener('submit', event => {
+  event.preventDefault()
   localStorage.setItem('username', enteredUsername.value)
   enteredUsername.value = ''
 })
@@ -18,8 +18,8 @@ usernameField.addEventListener('submit', name => {
 const startingPlaceField = document.querySelector('.startingPlace')
 const requestedStartingPlace = document.querySelector('#requestedStartingPlace')
 
-startingPlaceField.addEventListener('submit', destination => {
-  destination.preventDefault()
+startingPlaceField.addEventListener('submit', event => {
+  event.preventDefault()
   const requestIndex = document.querySelector('#requestedStartingPlace').selectedIndex
   const request = (requestedStartingPlace[requestIndex].text)
   if (request === 'Anime') {

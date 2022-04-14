@@ -9,7 +9,7 @@ document.querySelector('#backToTop').addEventListener('click', event => {
 const startingPlaceField = document.querySelector('.startingPlace')
 const requestedStartingPlace = document.querySelector('#requestedStartingPlace')
 
-startingPlaceField.addEventListener('submit', destination => {
+startingPlaceField.addEventListener('submit', event => {
   destination.preventDefault()
   const requestIndex = document.querySelector('#requestedStartingPlace').selectedIndex
   const request = (requestedStartingPlace[requestIndex].text)
@@ -69,8 +69,8 @@ const animeProblems = document.querySelector('.animeProblems')
 
 const problem = document.querySelector('.problem')
 
-animeProblems.addEventListener('submit', destination => {
-  destination.preventDefault()
+animeProblems.addEventListener('submit', event => {
+  event.preventDefault()
   const problemIndex = document.querySelector('#requestedProblem').selectedIndex
   if (problemIndex === [0]) {
     problem.innerHTML = `

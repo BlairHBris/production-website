@@ -9,8 +9,8 @@ document.querySelector('#backToTop').addEventListener('click', event => {
 const startingPlaceField = document.querySelector('.startingPlace')
 const requestedStartingPlace = document.querySelector('#requestedStartingPlace')
 
-startingPlaceField.addEventListener('submit', destination => {
-  destination.preventDefault()
+startingPlaceField.addEventListener('submit', event => {
+  event.preventDefault()
   const requestIndex = document.querySelector('#requestedStartingPlace').selectedIndex
   const request = (requestedStartingPlace[requestIndex].text)
   if (request === 'Anime') {
@@ -74,7 +74,7 @@ const firstLearning = document.querySelector('.firstLearning')
 const learning = document.querySelector('.learning')
 
 firstLearning.addEventListener('submit', event => {
-  destination.preventDefault()
+  event.preventDefault()
   const learningIndex = document.querySelector('#requestedLearning').selectedIndex
   if (learningIndex === [0]) {
     learning.innerHTML = `
