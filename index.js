@@ -2,7 +2,9 @@
 function backToTop () {
   document.documentElement.scrollTop = 0
 }
-document.querySelector('#backToTop').onclick = backToTop
+document.querySelector('#backToTop').addEventListener('click', event => {
+  backToTop()
+})
 
 const usernameField = document.querySelector('.username')
 const enteredUsername = document.querySelector('#enteredUsername')

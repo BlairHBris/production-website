@@ -2,12 +2,16 @@
 function backToTop () {
   document.documentElement.scrollTop = 0
 }
-document.querySelector('#backToTop').onclick = backToTop
+document.querySelector('#backToTop').addEventListener('click', event => {
+  backToTop()
+})
 
 function clear () {
   cardSpot.textContent = ''
 }
-document.querySelector('#clear').onclick = clear
+document.querySelector('#clear').addEventListener('click', event => {
+  clear()
+})
 
 const startingPlaceField = document.querySelector('.startingPlace')
 const requestedStartingPlace = document.querySelector('#requestedStartingPlace')

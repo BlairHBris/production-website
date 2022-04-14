@@ -2,7 +2,9 @@
 function backToTop () {
   document.documentElement.scrollTop = 0
 }
-document.querySelector('#backToTop').onclick = backToTop
+document.querySelector('#backToTop').addEventListener('click', event => {
+  backToTop()
+})
 
 const startingPlaceField = document.querySelector('.startingPlace')
 const requestedStartingPlace = document.querySelector('#requestedStartingPlace')
@@ -94,7 +96,6 @@ animeProblems.addEventListener('submit', destination => {
                 This isn't as big a deal as the triple Blue-Eyes summon, but is worth mentioning.
                 </p>
                 <img src="${cardImageGet('Giant Soldier of Stone')} alt = "Giant Soldier of Stone"/>
-
                 <h4> Activating Trap Cards</h4>
                 <img src="${cardImageGet('Trap Hole')} alt = "Trap Hole"/>
                 <p>

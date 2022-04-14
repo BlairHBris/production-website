@@ -2,7 +2,9 @@
 function backToTop () {
   document.documentElement.scrollTop = 0
 }
-document.querySelector('#backToTop').onclick = backToTop
+document.querySelector('#backToTop').addEventListener('click', event => {
+  backToTop()
+})
 
 const startingPlaceField = document.querySelector('.startingPlace')
 const requestedStartingPlace = document.querySelector('#requestedStartingPlace')
@@ -71,7 +73,7 @@ function cardImageGet (cardName) {
 const firstLearning = document.querySelector('.firstLearning')
 const learning = document.querySelector('.learning')
 
-firstLearning.addEventListener('submit', destination => {
+firstLearning.addEventListener('submit', event => {
   destination.preventDefault()
   const learningIndex = document.querySelector('#requestedLearning').selectedIndex
   if (learningIndex === [0]) {
@@ -83,7 +85,6 @@ firstLearning.addEventListener('submit', destination => {
                 face down in whatever zone it can go in, or just end their turn. Keep in mind, the maximum number of cards a player can have in their hand at the end of their turn is 7. If they have 
                 more than that you would have to discard cards to the Graveyard.
                 </p>
-
                 <h3> Spell Cards </h3>
                 <img src="${cardImageGet('Pot of Greed')} alt = "Pot of Greed"/>
                 <p>
@@ -95,7 +96,6 @@ firstLearning.addEventListener('submit', destination => {
                 Normal, Quickplay, and Continous spells are activated in a Spell & Trap card zone while a Field spell is activated in the Field Zone. On activation and effect resolution, performing the action 
                 the card says it does like drawing 2 cards, a Normal or Quickplay spell will go to the Graveyard while Field and Continuous spells stay in the zone they were activated in.
                 </p>
-
                 <h3> Trap Cards </h3>
                 <img src="${cardImageGet('Trap Hole')} alt = "Trap Hole"/>
                 <p>
@@ -107,7 +107,6 @@ firstLearning.addEventListener('submit', destination => {
                 Trap Cards are normally activatable in response to an action taken by your opponent. Take the above card, Trap Hole for instance. If you oppenent Normal or Flip summons a monster with 1000+ Attack 
                 and Trap Hole is set on your field, you can activate the card by flipping it face up and then the effect will resolve. When a Trap card resolves, it will go to the Graveyard. 
                 </p>
-
                 <h3> Monster Cards </h3>
                 <img src="${cardImageGet('Red-Eyes Black Dragon')} alt = "Red-Eyes Black Dragon"/>
                 <p>
@@ -184,7 +183,6 @@ firstLearning.addEventListener('submit', destination => {
                     The Banished Zone is only utilized if a card specifically says it Banishes or Removes from play. The most popular way this is accomplished is with the card Macro Cosmos. This card says that 
                     while it is on the field, any card sent to the Graveyard is Banished instead. Alternatively, Bottomless Trap Hole will destroy a summoned monster, send it to the Graveyard, and then Banish it.
                 </p>
-
                 `
   } if (learningIndex === [6]) {
     learning.innerHTML = `
