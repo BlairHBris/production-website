@@ -76,7 +76,6 @@ const enteredSearcher = document.querySelector('#enteredSearcher')
 searcherField.addEventListener('submit', event => {
   event.preventDefault()
   const desiredCard = enteredSearcher.value
-  console.log(desiredCard)
   fetch(`https://db.ygoprodeck.com/api/v7/cardinfo.php?name=${desiredCard}`)
     .then(response => {
       return response.json()
