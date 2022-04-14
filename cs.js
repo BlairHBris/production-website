@@ -19,15 +19,19 @@ const requestedStartingPlace = document.querySelector('#requestedStartingPlace')
 startingPlaceField.addEventListener('submit', event => {
   event.preventDefault()
   const requestIndex = document.querySelector('#requestedStartingPlace').selectedIndex
-  const request = (requestedStartingPlace[requestIndex].text)
-  if (request === 'Anime') {
-    location.href = 'anime.html'
-  } if (request === 'Card Search') {
-    location.href = 'cs.html'
-  } if (request === 'The Basics') {
-    location.href = 'basics.html'
-  } if (request === 'Homepage') {
-    location.href = 'index.html'
+  switch (requestIndex) {
+    case 0:
+      location.href = 'basics.html'
+      break
+    case 1:
+      location.href = 'anime.html'
+      break
+    case 2:
+      location.href = 'cs.html'
+      break
+    case 3:
+      location.href = 'index.html'
+      break
   }
 })
 
