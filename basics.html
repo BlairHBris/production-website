@@ -30,29 +30,35 @@
         </p>
         <h2>The Field and The Cards</h2>
         <p>
+        <div class="centeringDiv">
             <a href="images/ygofield.jpg">
                 <img class="ygofield" src="images/ygofield.jpg" alt="The Field">
             </a>
-            <br>
+        </div>
+        <br>
+        <p>
             Let's start with where we play the game, the Field, and what we play it with, the Cards. As you can see in
             the labled image above, there are many zones on the field for cards to go but
             not all cards can go in all zones. Use the selector below to learn about any zone and the cards that can
             occupy them that you want!
         </p>
-        <form class=firstLearning id="learning">
-            <label for="zoneSelector">Zone Selection</label>
-            <select name="zoneSelector" id="requestedLearning">
-                <option value="deck">The Deck and The Cards</option>
-                <option value="mmz">Monster Card Zone</option>
-                <option value="stz">Spell & Trap Zone</option>
-                <option value="fz">Field Zone</option>
-                <option value="gy">Graveyard</option>
-                <option value="banished">Banished Zone</option>
-                <option value="fusion">Fusion Deck</option>
-                <option value="clear">Clear</option>
-            </select>
-            <input class="submit" type="submit" type="submit">
-        </form>
+        </p>
+        <div class="centeringDiv">
+            <form class=firstLearning id="learning">
+                <label for="zoneSelector">Zone Selection</label>
+                <select name="zoneSelector" id="requestedLearning">
+                    <option value="deck">The Deck and The Cards</option>
+                    <option value="mmz">Monster Card Zone</option>
+                    <option value="stz">Spell & Trap Zone</option>
+                    <option value="fz">Field Zone</option>
+                    <option value="gy">Graveyard</option>
+                    <option value="banished">Banished Zone</option>
+                    <option value="fusion">Fusion Deck</option>
+                    <option value="clear">Clear</option>
+                </select>
+                <input class="submit" type="submit" type="submit">
+            </form>
+        </div>
         <br>
         <p class="learning"></p>
         <div class="centeringDiv">
@@ -114,7 +120,9 @@
             <option value="cs">Card Search</option>
             <option value="home">Homepage</option>
         </select>
-        <input class="submit" type="submit" value="Go">
+        <div class="centeringDiv">
+            <input class="submit" type="submit" value="Go">
+        </div>
     </form>
     </p>
 

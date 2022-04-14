@@ -90,9 +90,14 @@ h5 {
 }
 
 
-p, form {
+form {
     font-size: 1.4em;
     line-height: 2em;
+}
+
+p {
+    line-height: 2em;
+    font-size: 1.2em;
 }
 
 p a {
@@ -109,12 +114,30 @@ input, select {
     margin-bottom: 1em;
 }
 
-button {
+button,
+.submit{
     font-size: 1em;
+    background-color: white;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    display: inline-block;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    text-align: center;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .centeringDiv {
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #backToTop {
@@ -162,25 +185,8 @@ button:hover,
 }
 
 img {
-    width: 80%;
+    width: 25em;
+    max-width: 80%;
     margin-top: 1em;
     margin-bottom: 1em;
-}
-
-button {
-    background-color: white;
-    border-radius: 8px;
-    border-style: none;
-    box-sizing: border-box;
-    display: inline-block;
-    height: 40px;
-    line-height: 20px;
-    list-style: none;
-    margin: 0;
-    outline: none;
-    padding: 10px 16px;
-    text-align: center;
-    vertical-align: baseline;
-    user-select: none;
-    -webkit-user-select: none;
 }
