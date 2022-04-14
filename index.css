@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
 
-body{
+body {
     font-family: 'Play', sans-serif;
     color: white;
     margin-left: auto;
@@ -35,18 +35,18 @@ li.nav a {
     padding: 1em;
 }
 
-li.nav a:hover{
+li.nav a:hover {
     text-decoration: underline 1px white;
     background-color: rgb(211, 170, 65);
 }
 
-.banner{
+.banner {
     width: 75%;
     height: 15em;
     align-items: center;
 }
 
-main{
+main {
     width: 60%;
     margin-left: auto;
     margin-right: auto;
@@ -54,35 +54,35 @@ main{
     margin-bottom: 3em;
 }
 
-h1{
+h1 {
     color:rgb(211, 170, 65);
     font-size: 3em;
     margin: .5em;
     text-align: center;
 }
 
-h2{
+h2 {
     color:rgb(211, 170, 65);
     font-size: 2em;
     margin: 1em;
     text-align: center;
 }
 
-h3{
+h3 {
     color:rgb(211, 170, 65);
     font-size: 1.75em;
     margin: 1em;
     text-align: center;
 }
 
-h4{
+h4 {
     color:rgb(211, 170, 65);
     font-size: 1.5em;
     margin: 1em;
     text-align: center;
 }
 
-h5{
+h5 {
     color:rgb(211, 170, 65);
     font-size: 1.25em;
     margin: .5em;
@@ -90,7 +90,7 @@ h5{
 }
 
 
-p, form{
+p, form {
     font-size: 1.4em;
     line-height: 2em;
 }
@@ -99,7 +99,7 @@ p a {
     color: white;
 }
 
-input, select{
+input, select {
     font-size: 1em;
     width: 60%;
     display: block;
@@ -109,65 +109,65 @@ input, select{
     margin-bottom: 1em;
 }
 
-button{
+button {
     font-size: 1em;
 }
 
-.centeringDiv{
+.centeringDiv {
     text-align: center;
 }
 
-#backToTop{
+#backToTop {
     margin-top: 2em;
     margin-bottom: 2em;
     font-size: 1.5em;
 }
 
-#clear{
+#clear {
     margin-top: 1em;
     font-size: 1.5em;
 }
 
-#backToZone{
+#backToZone {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
     font-size: 1.5em;
 
 }
 
-#backToZone a{
+#backToZone a {
     text-decoration: none;
     color: black;
 }
 
 button:hover,
-.submit:hover{
+.submit:hover {
     background-color: rgb(211, 170, 65);
     cursor: pointer;
 }
 
-.ygofield{
+.ygofield {
     width: 100%;
 }
 
-.greeting{
+.greeting {
     line-height: 1em;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
 }
 
-.learning{
+.learning {
     font-size: 16px;
 }
 
-img{
+img {
     width: 80%;
     margin-top: 1em;
     margin-bottom: 1em;
 }
 
-button{
+button {
     background-color: white;
     border-radius: 8px;
     border-style: none;
@@ -184,4 +184,3 @@ button{
     user-select: none;
     -webkit-user-select: none;
 }
-
