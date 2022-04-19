@@ -79,9 +79,10 @@ const learning = document.querySelector('.learning')
 
 firstLearning.addEventListener("submit", event => {
   event.preventDefault()
-  const learningIndex = document.querySelector('#requestedLearning').selectedIndex
-  switch (learningIndex) {
-    case 0:
+  const formData = new FormData(event.target)
+  const zoneSelector = formData.get("zoneSelector")
+  switch (zoneSelector) {
+    case 'deck':
       learning.innerHTML = 
       `
       <h2> The Deck and The Cards </h2>
@@ -153,7 +154,7 @@ firstLearning.addEventListener("submit", event => {
       </p>
       `
       break
-    case 1:
+    case 'mmz':
       learning.innerHTML = 
       `
       <h2>The Monster Card Zone</h2>
@@ -168,7 +169,7 @@ firstLearning.addEventListener("submit", event => {
       </p>
       `
       break
-    case 2:
+    case 'stz':
       learning.innerHTML = 
       `
       <h2> The Spell & Trap Zone </h2>
@@ -183,7 +184,7 @@ firstLearning.addEventListener("submit", event => {
       </p>
       `
       break
-    case 3:
+    case 'fz':
       learning.innerHTML = 
       `
       <h2> The Field Zone </h2>
@@ -197,7 +198,7 @@ firstLearning.addEventListener("submit", event => {
       </p>
       `
       break
-    case 4:
+    case 'gy':
       learning.innerHTML = 
       `
       <h2> The Graveyard </h2>
@@ -210,7 +211,7 @@ firstLearning.addEventListener("submit", event => {
       </p>
       `
       break
-    case 5:
+    case 'banished':
       learning.innerHTML = 
       `
       <h2> The Banished Zone </h2>
@@ -223,7 +224,7 @@ firstLearning.addEventListener("submit", event => {
       </p>
       `
       break
-    case 6:
+    case 'fusion':
       learning.innerHTML = 
       `
       <h2> The Fusion Deck </h2>
@@ -242,7 +243,7 @@ firstLearning.addEventListener("submit", event => {
           worth summoning as you need to use 3 cards, 2 monsters minimum and the Polymerization, to summon 1 monster.
       `
       break
-    case 7: 
+    case 'clear': 
       learning.innerHTML = ''
       break
 

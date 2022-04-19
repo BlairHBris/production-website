@@ -75,9 +75,10 @@ const problem = document.querySelector('.problem')
 
 animeProblems.addEventListener('submit', event => {
   event.preventDefault()
-  const problemIndex = document.querySelector('#requestedProblem').selectedIndex
-  switch (problemIndex) {
-    case 0:
+  const formData = new FormData(event.target)
+  const zoneSelector = formData.get("zoneSelector")
+  switch (zoneSelector) {
+    case 'banal':
       problem.innerHTML = 
       `
       <h2> Basic Game Mechanics </h2>
@@ -119,7 +120,7 @@ animeProblems.addEventListener('submit', event => {
       </p>
       `
       break
-    case 1:
+    case 'bcd':
       problem.innerHTML = 
       `
       <h2>Broken Card Design</h2>
@@ -161,7 +162,7 @@ animeProblems.addEventListener('submit', event => {
       </p>
       `
       break
-    case 2:
+    case 'wtf':
       problem.innerHTML = 
       `
       <h2> This isn't How Anything Works </h2>
@@ -178,7 +179,9 @@ animeProblems.addEventListener('submit', event => {
       to the worst part. In the Anime, when this card was played, it made a literal labyrinth out of the dueling field that monsters had to walk to the end of to win the duel. The maze had its 
       own set of rediculous rules but still, this isn't how anything works.
       </p>
+      <div class="centeringDiv">
       <img src="images/animelab.jpg" alt="Labyrinth Wall Anime"/>
+      </div>
       <h3> Attack the Moon! </h3>
       <div class="centeringDiv">
       <img src="${cardImageGet('Giant Soldier of Stone')} alt = "Giant Soldier of Stone"/>
@@ -193,17 +196,23 @@ animeProblems.addEventListener('submit', event => {
       And here is a new friend, Mystical Moon. A simple equip spell that increased the attack and defense of the monster its equipped with. I'm sure nothing wierd happened when these two 
       interacted in the anime. Let's check in on that.
       </p>
+      <div class="centeringDiv">
       <img src="images/waterduel.PNG" alt="Water Duel"/>
+      </div>
       <p>
       Well look at that. See totally normal. Half the field is water that monster can hide under and prevent the opponent from knowing what they are. Yes totally fine moving on.
       </p>
+      <div class="centeringDiv">
       <img src="images/attacking.PNG" alt="Attacking"/>
+      </div>
       <p>
       And here we go more normal stuff. The Mystical Moon was activated causing the water to rise and making it so Yugi, the main character, can't summon anymore monsters than the Giant 
       Soldier of Stone he already has out. Oh and 3 monsters are going to attack the Giant Soldier at the same time because that totally works and adds their attack power together so they can 
       get over the 2000 Defense the monster has which again, totally works.
       </p>
+      <div class="centeringDiv">
       <img src="images/attackthemoon.PNG" alt="Attack The Moon"/>
+      </div>
       <p>
       And oh look, the Giant Soldier hit the moon with its sword, destroying it, causing the water to eventually go away, destroying all the monsters and winning the duel. This is totally 
       how this all works and is great and fine.
@@ -211,7 +220,7 @@ animeProblems.addEventListener('submit', event => {
       <h3> THIS IS NOT HOW ANYTHING WORKS </h3>
       `
       break
-    case 3:
+    case 'clear':
       problem.innerHTML = ''
       break
   }
