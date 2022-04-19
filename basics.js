@@ -10,18 +10,19 @@ const requestedStartingPlace = document.querySelector('#requestedStartingPlace')
 
 startingPlaceField.addEventListener('submit', event => {
   event.preventDefault()
-  const requestIndex = document.querySelector('#requestedStartingPlace').selectedIndex
-  switch (requestIndex) {
-    case 0:
+  const formData = new FormData(event.target)
+  const startingPlace = formData.get("startingPlace")
+  switch (startingPlace) {
+    case 'basics':
       location.href = 'basics.html'
       break
-    case 1:
+    case 'anime':
       location.href = 'anime.html'
       break
-    case 2:
+    case 'cs':
       location.href = 'cs.html'
       break
-    case 3:
+    case 'home':
       location.href = 'index.html'
       break
   }
